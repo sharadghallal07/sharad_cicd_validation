@@ -24,7 +24,48 @@ pipelines:
       outputs: []
     subgraphs: []
     dependencies: {}
-datasets: {}
+  pipelines/pl_cicd_test02:
+    name: pl_cicd_test02
+    description: data set clone test
+    author: sharad.ghallal@cloudaeon.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-08-01 08:05:21'
+    datasets:
+      inputs:
+      - datasets/ds_src_01
+      outputs:
+      - datasets/ds_tgt_01
+    subgraphs: []
+    dependencies: {}
+datasets:
+  datasets/ds_src_01:
+    name: ds_src_01
+    description: ''
+    author: sharad.ghallal@cloudaeon.net
+    createdAt: '2024-08-01 08:14:41'
+    mode: batch
+    physicalDatasets:
+      Job_test:
+        fabricId: 13085
+        datasetType: Database
+        description: ''
+        author: sharad.ghallal@cloudaeon.net
+        createdAt: '2024-08-01 08:14:41'
+  datasets/ds_tgt_01:
+    name: ds_tgt_01
+    description: ''
+    author: sharad.ghallal@cloudaeon.net
+    createdAt: '2024-08-01 08:15:58'
+    mode: batch
+    physicalDatasets:
+      Job_test:
+        fabricId: 13085
+        datasetType: Database
+        description: ''
+        author: sharad.ghallal@cloudaeon.net
+        createdAt: '2024-08-01 08:15:58'
 templates: {}
 jobs: {}
 gemContainer:
