@@ -1,0 +1,197 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.0.29",
+        "pyPiVersion" : "1.9.9"
+      }
+    },
+    "id" : "1",
+    "uri" : "pipelines/pl_cicd_test02",
+    "pipelineSettingsInfo" : {
+      "applicationName" : "pl_cicd_test02",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true
+    },
+    "language" : "python",
+    "fabricId" : "13085",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ],
+      "functionPackageName" : "sharadghallalcloudaeonnetteam.projcicdtest.functions",
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "pl_cicd_test02",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "WJ4hP1gZg9C3M6F88T6Qv$$EWtTE9J0-478YmeZWVol5",
+    "source" : "L4IgUrzIcPQMG2SAxsKAX$$VroB8oxe6FvXGxqmvbCZi",
+    "sourcePort" : "GR-RxUwkPJs5mmk2HFi-l$$9g1iNA6N6Bb8poEesVXqQ",
+    "target" : "CPK_bBKm9M0ZvFVNPrC-R$$THK_4pmT7T6doHF6mbJB8",
+    "targetPort" : "aQtD0B9UZBSUmfrInFp3r$$Y4Kp9CxLEXSqwUNSv_SaF"
+  } ],
+  "processes" : {
+    "L4IgUrzIcPQMG2SAxsKAX$$VroB8oxe6FvXGxqmvbCZi" : {
+      "id" : "L4IgUrzIcPQMG2SAxsKAX$$VroB8oxe6FvXGxqmvbCZi",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "ds_src_01",
+        "slug" : "ds_src_01",
+        "x" : -440,
+        "y" : -120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Reads data from the table 'employee_tbl'.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "GR-RxUwkPJs5mmk2HFi-l$$9g1iNA6N6Bb8poEesVXqQ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/ds_src_01"
+      }
+    },
+    "CPK_bBKm9M0ZvFVNPrC-R$$THK_4pmT7T6doHF6mbJB8" : {
+      "id" : "CPK_bBKm9M0ZvFVNPrC-R$$THK_4pmT7T6doHF6mbJB8",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "ds_tgt_01",
+        "slug" : "ds_tgt_01",
+        "x" : -240,
+        "y" : -120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "aQtD0B9UZBSUmfrInFp3r$$Y4Kp9CxLEXSqwUNSv_SaF",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "Employee_Name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Dept",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Location",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Manager",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "Salary",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/ds_tgt_01"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  }
+}

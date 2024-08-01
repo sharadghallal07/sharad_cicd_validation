@@ -1,6 +1,6 @@
 name: proj_cicd_test
 description: to test the cicd process
-version: v1
+version: v2
 author: sharad.ghallal@cloudaeon.net
 language: python
 buildSystem: ''
@@ -24,7 +24,48 @@ pipelines:
       outputs: []
     subgraphs: []
     dependencies: {}
-datasets: {}
+  pipelines/pl_cicd_test02:
+    name: pl_cicd_test02
+    description: to test the dataset copy into cicd process
+    author: sharad.ghallal@cloudaeon.net
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2024-08-01 08:21:21'
+    datasets:
+      inputs:
+      - datasets/ds_src_01
+      outputs:
+      - datasets/ds_tgt_01
+    subgraphs: []
+    dependencies: {}
+datasets:
+  datasets/ds_src_01:
+    name: ds_src_01
+    description: ''
+    author: sharad.ghallal@cloudaeon.net
+    createdAt: '2024-08-01 08:21:55'
+    mode: batch
+    physicalDatasets:
+      Job_test:
+        fabricId: 13085
+        datasetType: Database
+        description: ''
+        author: sharad.ghallal@cloudaeon.net
+        createdAt: '2024-08-01 08:21:55'
+  datasets/ds_tgt_01:
+    name: ds_tgt_01
+    description: ''
+    author: sharad.ghallal@cloudaeon.net
+    createdAt: '2024-08-01 08:22:36'
+    mode: batch
+    physicalDatasets:
+      Job_test:
+        fabricId: 13085
+        datasetType: Database
+        description: ''
+        author: sharad.ghallal@cloudaeon.net
+        createdAt: '2024-08-01 08:22:36'
 templates: {}
 jobs: {}
 gemContainer:
@@ -50,18 +91,18 @@ sqlSources: {}
 sqlUnreferencedSources: {}
 sqlPipeline: null
 dependencies:
-- modifiedAt: '2024-07-31T13:12:28.531726Z'
+- type: plibMaven
+  modifiedAt: '2024-08-01T08:21:24.947702Z'
   name: plibMaven
   version: 8.0.29
-  id: '526226808'
-  createdAt: '2024-07-31T13:12:28.531726Z'
-  type: plibMaven
-- modifiedAt: '2024-07-31T13:12:28.531726Z'
+  id: '1016464960'
+  createdAt: '2024-08-01T08:21:24.947648Z'
+- type: plibPypi
+  modifiedAt: '2024-08-01T08:21:24.947738Z'
   name: plibPypi
   version: 1.9.9
-  id: '738975966'
-  createdAt: '2024-07-31T13:12:28.531726Z'
-  type: plibPypi
+  id: '315116326'
+  createdAt: '2024-08-01T08:21:24.947729Z'
 projectDependencies:
   '12654':
     projectUID: 12654
